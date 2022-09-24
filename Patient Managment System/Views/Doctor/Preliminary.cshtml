@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Preliminary";
+}
+
+<div class="text-center">
+    <h2 class="brand-text d-none d-lg-inline-block">Preliminary Analysis</h2>
+    <form class="login-form py-5 w-100" method="get" action="index.html">
+        <div class="input-material-group mb-3">
+            <input class="input-material" id="login-username" type="text" name="ID" autocomplete="on" required data-validate-field="loginUsername">
+            <label class="label-material" for="ID">Patient ID</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="History" required data-validate-field="History">
+            <label class="label-material" for="History">History</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="Symptoms" required data-validate-field="Symptoms">
+            <label class="label-material" for="Symptoms">Symptoms</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="LabOrder" required data-validate-field="LabOrder">
+            <label class="label-material" for="LabOrder">Labratory Order</label>
+        </div>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Submit</button>
+    </form>
+</div>
+

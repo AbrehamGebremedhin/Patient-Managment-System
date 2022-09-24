@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+<div class="text-center">
+    <h2 class="brand-text d-none d-lg-inline-block">Add New Medicine</h2>
+    <form class="login-form py-5 w-100" method="get" action="index.html">
+        <div class="input-material-group mb-3">
+            <input class="input-material" id="login-username" type="text" name="TradeName" autocomplete="on" required data-validate-field="DrugTradeName">
+            <label class="label-material" for="TradeName">Drug Trade Name</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="GenericName" required data-validate-field="DrugGenericName">
+            <label class="label-material" for="GenericName">Generic Drug Name </label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="Note" required data-validate-field="Note">
+            <label class="label-material" for="Note">Note </label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="number" name="Price" required data-validate-field="DrugPrice">
+            <label class="label-material" for="price">Drug Price </label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="date" name="ExpireDate" required data-validate-field="ExpirationDate">
+            <label class="label-material" for="ExpireDate">Drug Expire Date </label>
+        </div>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Confirm</button>
+    </form>
+</div>
+

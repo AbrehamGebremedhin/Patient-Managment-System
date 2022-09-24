@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Certificate";
+}
+
+    <h2 class="brand-text d-none d-lg-inline-block">Medical Certificate</h2>
+    <form class="login-form py-5 w-100" method="get" action="index.html">
+        <div class="input-material-group mb-3">
+            <input class="input-material" id="login-username" type="text" name="PatientId" autocomplete="on" required data-validate-field="loginUsername">
+            <label class="label-material" for="PatientId">Patient ID</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="Diagnosis" required data-validate-field="Diagnosis">
+            <label class="label-material" for="Diagnosis">Diagnosis</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="number" name="noOfDays" required data-validate-field="howlong">
+            <label class="label-material" for="noOfDays">Recommended Number Rest Days</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="date" name="currentDate" required data-validate-field="Date">
+            <label class="label-material" for="currentDate">Current Date</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="PhysicianName" required data-validate-field="PhysicianName">
+            <label class="label-material" for="PhysicianName">Physician Name</label>
+        </div>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Submit</button>
+    </form>
+

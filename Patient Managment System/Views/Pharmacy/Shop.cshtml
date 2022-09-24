@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="text-center">
+    <h2 class="brand-text d-none d-lg-inline-block">Shop</h2>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"></label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Medicine Order" disabled></textarea>
+    </div>
+    <form class="login-form py-5 w-100" method="get" action="index.html">
+        <div class="input-material-group mb-3">
+            <input class="input-material" id="login-username" type="text" name="PatientId" autocomplete="on" required data-validate-field="loginUsername">
+            <label class="label-material" for="PatientId">Patient ID</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="DrugName" required data-validate-field="DrugName">
+            <label class="label-material" for="DrugName">Drug Name </label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="number" name="DrugPrice" required data-validate-field="DrugPrice">
+            <label class="label-material" for="DrugPrice">Drug Price </label>
+        </div>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Confirm</button>
+    </form>
+</div>
+
+
