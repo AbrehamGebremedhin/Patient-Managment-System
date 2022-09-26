@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Patient_Managment_System.Models.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Patient_Managment_System.Models
 {
-    public partial class Patient
+    public partial class Patient : IEntityBase
     {
-        public uint Id { get; set; }
+        public int Id { get; set; }
         public string Fullname { get; set; } = null!;
         public string Phone { get; set; } = null!;
         public string? Email { get; set; }
@@ -14,7 +15,7 @@ namespace Patient_Managment_System.Models
         public string BloodType { get; set; } = null!;
         public float Weight { get; set; }
         public float Height { get; set; }
-        public DateOnly? Age { get; set; }
+        public DateTime Age { get; set; }
         public int? BillId { get; set; }
         public int? AppointemtId { get; set; }
         public string? Password { get; set; }

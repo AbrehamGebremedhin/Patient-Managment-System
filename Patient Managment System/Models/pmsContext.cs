@@ -130,7 +130,7 @@ namespace Patient_Managment_System.Models
 
             modelBuilder.Entity<Drug>(entity =>
             {
-                entity.HasKey(e => e.DId)
+                entity.HasKey(e => e.Id)
                     .HasName("PRIMARY");
 
                 entity.ToTable("drugs");
@@ -147,10 +147,10 @@ namespace Patient_Managment_System.Models
                 entity.HasIndex(e => e.TradeName, "TradeName_UNIQUE")
                     .IsUnique();
 
-                entity.HasIndex(e => e.DId, "dId_UNIQUE")
+                entity.HasIndex(e => e.Id, "dId_UNIQUE")
                     .IsUnique();
 
-                entity.Property(e => e.DId).HasColumnName("dId");
+                entity.Property(e => e.Id).HasColumnName("dId");
 
                 entity.Property(e => e.ExpireDate).HasColumnType("datetime");
 
@@ -247,12 +247,12 @@ namespace Patient_Managment_System.Models
 
             modelBuilder.Entity<PatientDiag>(entity =>
             {
-                entity.HasKey(e => e.PatientId)
+                entity.HasKey(e => e.Id)
                     .HasName("PRIMARY");
 
                 entity.ToTable("patient_diag");
 
-                entity.HasIndex(e => e.PatientId, "PatientId_UNIQUE")
+                entity.HasIndex(e => e.Id, "PatientId_UNIQUE")
                     .IsUnique();
 
                 entity.Property(e => e.Diagnosis).HasMaxLength(450);
@@ -282,6 +282,8 @@ namespace Patient_Managment_System.Models
                 entity.Property(e => e.Duration).HasMaxLength(45);
 
                 entity.Property(e => e.Type).HasMaxLength(450);
+
+                entity.Property(e => e.PhysicianName).HasMaxLength(45);
 
                 entity.HasOne(d => d.IdNavigation)
                     .WithOne(p => p.Prescriptiondrug)

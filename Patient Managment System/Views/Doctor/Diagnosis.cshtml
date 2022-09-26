@@ -5,14 +5,23 @@
 
 <div class="text-center">
     <h2 class="brand-text d-none d-lg-inline-block">Diagnosis</h2>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Labratory Result" disabled></textarea>
-    </div>
-    <form class="login-form py-5 w-100" method="get" action="index.html">
+    <form class="login-form py-5 w-100" method="post" action="/Doctor/Diagnosis">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Id">Patient ID</label>
+                <input type="number" class="form-control" id="Id" name="Id" placeholder="Patient ID">
+            </div>
+        </div>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Search</button>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Labratory Order" disabled>@ViewBag.Result</textarea>
+        </div>
+    </form>
+    <form class="login-form py-5 w-100" method="post" action="/Doctor/PatientDiagnosis">
         <div class="input-material-group mb-3">
-            <input class="input-material" id="login-username" type="text" name="PatientId" autocomplete="on" required data-validate-field="loginUsername">
-            <label class="label-material" for="PatientId">Patient ID</label>
+            <input class="input-material" id="login-username" type="text" name="Id" autocomplete="on" required data-validate-field="loginUsername">
+            <label class="label-material" for="Id">Patient ID</label>
         </div>
         <div class="input-material-group mb-4">
             <input class="input-material" id="login-password" type="text" name="Diagnosis" required data-validate-field="Diagnosis">

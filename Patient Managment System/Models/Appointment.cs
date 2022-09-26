@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Patient_Managment_System.Models.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Patient_Managment_System.Models
 {
-    public partial class Appointment
+    public partial class Appointment : IEntityBase
     {
         public Appointment()
         {

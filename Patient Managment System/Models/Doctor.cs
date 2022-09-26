@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Patient_Managment_System.Models.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Patient_Managment_System.Models
 {
-    public partial class Doctor
+    public partial class Doctor :IEntityBase
     {
         public Doctor()
         {

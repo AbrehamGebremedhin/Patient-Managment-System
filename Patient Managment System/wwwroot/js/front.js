@@ -284,6 +284,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 labResult: {
                     required: true,
+                },
+                id: {
+                    required : true,
                 }
             },
             messages: {
@@ -317,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 Role: 'Please enter a role',
                 RememberToken: 'Please enter a remember token',
                 labResult: 'Please enter a lab result'
+                id : "Please enter a patient ID"
             },
             invalidFormCallback: function () {
                 let errorInputs = document.querySelectorAll('.login-form input[required]');

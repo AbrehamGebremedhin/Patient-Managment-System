@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Patient_Managment_System.Models.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Patient_Managment_System.Models
 {
-    public partial class OrderHistory
+    public partial class OrderHistory : IEntityBase
     {
         public OrderHistory()
         {
@@ -11,9 +12,9 @@ namespace Patient_Managment_System.Models
         }
 
         public int Id { get; set; }
-        public string History { get; set; } = null!;
-        public string Symptoms { get; set; } = null!;
-        public string LabOrder { get; set; } = null!;
+        public string History { get; set; } 
+        public string Symptoms { get; set; }
+        public string LabOrder { get; set; }
         public int? TestId { get; set; }
         public int? PatientId { get; set; }
 

@@ -1,24 +1,44 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Patient_Managment_System.Models;
+using Patient_Managment_System.Models.Services;
 
 namespace Patient_Managment_System.Controllers
 {
     public class ReceptionController : Controller
     {
-        public IActionResult Index()
+        private readonly IPatientService _patientService;
+        private readonly IBillService _billService;
+        private readonly IAppointmentService _appointmentService;
+        public ReceptionController(IPatientService patientService, IBillService billService, IAppointmentService appointmentService)
+        {
+            _patientService = patientService;
+            _billService = billService;
+            _appointmentService = appointmentService;
+        }
+
+        public async Task<IActionResult> Index()
         {
             return View();
         }
 
-        public IActionResult NewPatient()
+        public async Task<IActionResult> NewPatient()
         {
             return View();
         }
 
-        public IActionResult Appointment()
+        [HttpPost]
+        public async Task<IActionResult> NewPatient(Patient patient)
         {
-            return View();
+            await _patientService.AddAsync(patient);
+            return RedirectToAction(nameof(Index));
         }
-        public IActionResult BillMenu()
+
+        public async Task<IActionResult> Appointment()
+        {
+            var appointments = await _appointmentService.GetAllAsync();
+            return View(appointments);
+        }
+        public async Task<IActionResult> BillMenu()
         {
             return View();
         }

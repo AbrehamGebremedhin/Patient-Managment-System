@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<User>
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,21 +7,22 @@
     <h1>Welcome to Admin Dashboard </h1> 
     <h2 class="brand-text d-none d-lg-inline-block">User List</h2><br />
     <table class="table">
-        <thead>
             <tr>
                <th scope="col">#</th>
                <th scope="col">User Name</th>
                <th scope="col">User Role</th>
-               <th scope="col">Action</th>
+               <th scope="col">Delete</th>
+               <th scope="col">Update</th>
             </tr>
-        </thead>
-            <tbody>
-               <tr>
-                   <th scope="row">1</th>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-               </tr>
-            </tbody>
+            @foreach(var user in Model){
+            <tr>
+                <th scope="row">@user.Id</th>
+                <td>@user.Name</td>
+                <td>@user.Role</td>
+                <td><a href="/Admin/RemoveUser/@user.Id" class=" btn btn-outline-danger"><i class="bi bi-trash"></i>Terminate User</a></td>
+                <td><a href="/Admin/UpdateUser/@user.Id" class=" btn btn-outline-primary"><i class="bi bi-trash"></i>Edit User Information</a></td>
+            </tr>
+
+            }          
     </table>
 </div>

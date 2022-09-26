@@ -1,6 +1,8 @@
-﻿namespace Patient_Managment_System.Models.Services
+﻿using Patient_Managment_System.Models.Base;
+
+namespace Patient_Managment_System.Models.Services
 {
-    public interface IPatientService
+    public interface IPatientService : IEntityBaseRepository<Patient>
     {
     }
 }

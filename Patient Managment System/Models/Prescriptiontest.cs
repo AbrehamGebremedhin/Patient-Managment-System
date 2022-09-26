@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Patient_Managment_System.Models.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Patient_Managment_System.Models
 {
-    public partial class Prescriptiontest
+    public partial class Prescriptiontest :IEntityBase
     {
         public int Id { get; set; }
         public string? Description { get; set; }

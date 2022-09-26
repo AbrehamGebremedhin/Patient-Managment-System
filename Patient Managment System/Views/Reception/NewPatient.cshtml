@@ -5,7 +5,7 @@
 
 <div class="text-center">
     <h2 class="brand-text d-none d-lg-inline-block">Add New Patient</h2>
-    <form class="login-form py-5 w-100" method="get" action="">
+    <form class="login-form py-5 w-100" method="post" action="/Reception/NewPatient">
         <div class="input-material-group mb-3">
             <input class="input-material" id="login-username" type="text" name="Fullname" autocomplete="on" required data-validate-field="FullName">
             <label class="label-material" for="Fullname">Patient's Full Name</label>
@@ -28,10 +28,10 @@
         </div>
         <div class="input-material-group mb-4">
             <input class="input-material" id="login-password" type="text" name="Address" required data-validate-field="Address">
-            <label class="label-material" for="login-password">Address</label>
+            <label class="label-material" for="Address">Address</label>
         </div>
         <div class="input-material-group mb-4">
-            <input class="input-material" id="login-password" type="password" name="BloodType" required data-validate-field="BloodType">
+            <input class="input-material" id="login-password" type="text" name="BloodType" required data-validate-field="BloodType">
             <label class="label-material" for="BloodType">BloodType</label>
         </div>
         <div class="input-material-group mb-4">

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Patient_Managment_System.Models.Base;
+using System;
 using System.Collections.Generic;
 
 namespace Patient_Managment_System.Models
 {
-    public partial class Drug
+    public partial class Drug : IEntityBase
     {
-        public int DId { get; set; }
+        public int Id { get; set; }
         public string TradeName { get; set; } = null!;
         public string GenericName { get; set; } = null!;
         public string Note { get; set; } = null!;

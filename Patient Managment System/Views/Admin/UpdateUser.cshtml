@@ -1,11 +1,12 @@
-﻿
+﻿@model User
 @{
-    ViewData["Title"] = "NewUser";
+    ViewData["Title"] = "UpdateUser";
+    Layout = "~/Views/Admin/_Layout.cshtml";
 }
 
 <div class="text-center">
     <h2 class="brand-text d-none d-lg-inline-block">Add New User</h2>
-    <form class="login-form py-5 w-100" method="post" action="/Admin/NewUser">
+    <form class="login-form py-5 w-100" method="post" action="/Admin/UpdateUser/@Model.Id">
         <div class="input-material-group mb-3">
             <input class="input-material" id="login-username" type="text" name="Name" autocomplete="on" required data-validate-field="Fullname">
             <label class="label-material" for="Name">User's Full Name</label>
@@ -26,7 +27,7 @@
             <input class="input-material" id="login-password" type="text" name="RememberPhrase" required data-validate-field="RememberToken">
             <label class="label-material" for="RememberPhrase">Remeber Token</label>
         </div>
-        <button class="btn btn-primary mb-3" id="login" type="submit">Add New User</button>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Save New User Information</button>
     </form>
 </div>
 
