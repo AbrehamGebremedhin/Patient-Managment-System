@@ -1,11 +1,12 @@
 ﻿
 @{
     ViewData["Title"] = "Add";
+    <script src="~/js/front.js"></script>
 }
 
 <div class="text-center">
     <h2 class="brand-text d-none d-lg-inline-block">Add New Medicine</h2>
-    <form class="login-form py-5 w-100" method="get" action="index.html">
+    <form class="login-form py-5 w-100" method="post" action="/Pharmacy/Add">
         <div class="input-material-group mb-3">
             <input class="input-material" id="login-username" type="text" name="TradeName" autocomplete="on" required data-validate-field="DrugTradeName">
             <label class="label-material" for="TradeName">Drug Trade Name</label>

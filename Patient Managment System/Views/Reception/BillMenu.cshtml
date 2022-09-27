@@ -1,31 +1,30 @@
-﻿
+﻿@model IEnumerable<Bill>
 @{
     ViewData["Title"] = "BillMenu";
+    <script src="~/js/front.js"></script>
 }
 
 <div class="text-center">
     <h2 class="brand-text d-none d-lg-inline-block">Upcoming Appointments</h2><br />
     <table class="table">
-        <thead>
+        <tr>
+
+            <th scope="col">#</th>
+            <th scope="col">Invoice Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Payment Mode</th>
+            <th scope="col">Payment Status</th>
+        </tr>
+        @foreach (var item in Model)
+        {
             <tr>
-               <th scope="col">#</th>
-               <th scope="col">Patient Name</th>
-               <th scope="col">Invoice Title</th>
-               <th scope="col">Price</th>
-               <th scope="col">Payment Mode</th>
-               <th scope="col">Payment Status</th>
+                <th scope="row">@item.Id</th>
+                <td>@item.InvoiceTitle</td>
+                <td>@item.InvoiceAmount</td>
+                <td>@item.PaymentMode</td>
+                <td>@item.PaymentStatus</td>
             </tr>
-        </thead>
-            <tbody>
-               <tr>
-                   <th scope="row">1</th>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-               </tr>
-            </tbody>
+        }
     </table>
 </div>
 

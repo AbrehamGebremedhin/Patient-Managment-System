@@ -84,6 +84,10 @@ namespace Patient_Managment_System.Models
 
                 entity.Property(e => e.InvoiceTitle).HasPrecision(10);
 
+                entity.Property(e => e.PaymentStatus)
+                    .HasMaxLength(10)
+                    .UseCollation("utf8mb4_bin");
+
                 entity.Property(e => e.PaymentMode).HasMaxLength(45);
 
                 entity.Property(e => e.Reference).HasColumnType("mediumtext");
@@ -147,10 +151,10 @@ namespace Patient_Managment_System.Models
                 entity.HasIndex(e => e.TradeName, "TradeName_UNIQUE")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Id, "dId_UNIQUE")
+                entity.HasIndex(e => e.Id, "Id_UNIQUE")
                     .IsUnique();
 
-                entity.Property(e => e.Id).HasColumnName("dId");
+                entity.Property(e => e.Id).HasColumnName("Id");
 
                 entity.Property(e => e.ExpireDate).HasColumnType("datetime");
 

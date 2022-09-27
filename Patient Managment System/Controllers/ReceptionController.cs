@@ -40,7 +40,8 @@ namespace Patient_Managment_System.Controllers
         }
         public async Task<IActionResult> BillMenu()
         {
-            return View();
+            var data = await _billService.GetAllAsync();
+            return View(data);
         }
     }
 }

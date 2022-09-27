@@ -1,13 +1,14 @@
 ﻿
 @{
     ViewData["Title"] = "Medicine";
+    <script src="~/js/front.js"></script>
 }
 
 <div class="text-center">
     <h2 class="brand-text d-none d-lg-inline-block">Medicine Order</h2>
     <form class="login-form py-5 w-100" method="post" action="/Doctor/Medicine">
         <div class="input-material-group mb-3">
-            <input class="input-material" id="login-username" type="text" name="Id" autocomplete="on" required data-validate-field="loginUsername">
+            <input class="input-material" id="login-username" type="text" name="Id" autocomplete="on" required data-validate-field="Id">
             <label class="label-material" for="Id">Patient ID</label>
         </div>
         <div class="input-material-group mb-4">

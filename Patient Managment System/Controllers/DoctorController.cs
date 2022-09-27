@@ -33,9 +33,10 @@ namespace Patient_Managment_System.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Preliminary(OrderHistory history)
+        public async Task<IActionResult> Preliminary(OrderHistory orderHistory)
         {
-            await _orderHistoryService.AddAsync(history);
+            orderHistory.PatientId = orderHistory.Id;
+            await _orderHistoryService.AddAsync(orderHistory);
             return RedirectToAction(nameof(Index));
         }
 
