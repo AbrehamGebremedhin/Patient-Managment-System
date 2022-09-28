@@ -14,7 +14,7 @@ namespace Patient_Managment_System.Controllers
             _prescriptiontestService = prescriptiontestService;
             _orderHistoryService = orderHistoryService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
             return View();
         }

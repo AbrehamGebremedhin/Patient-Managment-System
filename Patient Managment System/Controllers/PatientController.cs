@@ -4,7 +4,7 @@ namespace Patient_Managment_System.Controllers
 {
     public class PatientController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             return View();
         }

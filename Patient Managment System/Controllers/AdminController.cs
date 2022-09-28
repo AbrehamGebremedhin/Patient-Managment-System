@@ -12,7 +12,7 @@ namespace Patient_Managment_System.Controllers
             _userService = userService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
             var data = await _userService.GetAllAsync();
             return View(data);

@@ -23,8 +23,9 @@ namespace Patient_Managment_System.Controllers
             _prescriptiontest = prescriptiontest;
             _prescriptiondrug = prescriptiondrug;
         }
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
+            ViewBag.uId = id;
             return View();
         }
 

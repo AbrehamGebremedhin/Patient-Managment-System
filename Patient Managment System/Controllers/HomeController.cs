@@ -26,7 +26,7 @@ namespace Patient_Managment_System.Controllers
             var email = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Email).FirstOrDefault();
             var pass = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Password).FirstOrDefault();
             var role = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Role).FirstOrDefault();
-
+            var uId = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Id).FirstOrDefault();
             if (username.Equals(email))
             {
                 if (password.Equals(pass))
@@ -34,7 +34,8 @@ namespace Patient_Managment_System.Controllers
                     return RedirectToRoute(new
                     {
                         controller = role,
-                        action = "Index"
+                        action = "Index",
+                        Id = uId
                     }); ;
                 }
             }

@@ -16,7 +16,7 @@ namespace Patient_Managment_System.Controllers
             _drugService = drugService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
             return View();
         }

@@ -1,27 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Patient_Managment_System.Models.Services;
 
 namespace Patient_Managment_System.Controllers
 {
     public class SettingsController : Controller
     {
-        public IActionResult Index()
+        private readonly IUserService _setuserService;
+        private int uId;
+        public SettingsController(IUserService userService)
         {
+            _setuserService = userService;
+        }
+        public IActionResult Index(int id)
+        {
+            uId = id;
             return View();
         }
 
-        public IActionResult password()
-        {
-            return View();
-        }
-
-        public IActionResult email()
-        {
-            return View();
-        }
-
-        public IActionResult token()
-        {
-            return View();
-        }
     }
 }
