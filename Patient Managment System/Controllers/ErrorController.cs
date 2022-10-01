@@ -8,5 +8,15 @@ namespace Patient_Managment_System.Controllers
         {
             return View();
         }
+
+        public IActionResult Email()
+        {
+            return View();
+        }
+
+        public IActionResult Password()
+        {
+            return View();
+        }
     }
 }

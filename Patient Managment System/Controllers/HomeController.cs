@@ -42,13 +42,21 @@ namespace Patient_Managment_System.Controllers
                         role = urole
                     }); ;
                 }
+                else
+                {
+                    return RedirectToRoute(new
+                    {
+                        controller = "Error",
+                        action = "Password"
+                    });
+                }
             }
             else
             {
                 return RedirectToRoute(new
                 {
-                    controller = "Home",
-                    action = "Error"
+                    controller = "Error",
+                    action = "Email"
                 });
             }
             return View();
