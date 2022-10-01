@@ -48,12 +48,10 @@
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                             <!-- Settings-->
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="/Settings/Index">
-                                    <span class="d-none d-sm-inline">Settings</span>
-                                    <svg class="svg-icon svg-icon-xs svg-icon-heavy">
-                                        <use xlink:href="#setting-1"> </use>
-                                    </svg>
-                                </a>
+                                @using (Html.BeginForm("index", "Settings"))
+                                {
+                                    <a href="/Settings/Index/?Id=@ViewBag.Id&role=@ViewBag.role">Settings</a>
+                                }
                             </li>
                 <!-- Logout    -->
                 <li class="nav-item"><a class="nav-link text-white" href="/Home/Index"> <span class="d-none d-sm-inline">Logout</span>

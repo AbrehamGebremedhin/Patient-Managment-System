@@ -49,20 +49,18 @@ namespace Patient_Managment_System.Models
                 entity.HasIndex(e => e.Id, "ID_UNIQUE")
                     .IsUnique();
 
-                entity.HasIndex(e => e.DoctorId, "appointement_doctor_idx");
-
                 entity.Property(e => e.Id)
                     .ValueGeneratedNever()
                     .HasColumnName("ID");
 
-                entity.Property(e => e.DoctorId).HasColumnName("DoctorID");
+                entity.Property(e => e.DoctorName).HasMaxLength(50);
+
+                entity.Property(e => e.PatientName).HasMaxLength(50);
+
+                entity.Property(e => e.PhoneNumber).HasMaxLength(50);
 
                 entity.Property(e => e.LastVisited).HasColumnName("lastVisited");
 
-                entity.HasOne(d => d.Doctor)
-                    .WithMany(p => p.Appointments)
-                    .HasForeignKey(d => d.DoctorId)
-                    .HasConstraintName("appointement_doctor");
             });
 
             modelBuilder.Entity<Bill>(entity =>
@@ -226,11 +224,6 @@ namespace Patient_Managment_System.Models
                 entity.Property(e => e.Password).HasMaxLength(45);
 
                 entity.Property(e => e.Phone).HasMaxLength(45);
-
-                entity.HasOne(d => d.Appointemt)
-                    .WithMany(p => p.Patients)
-                    .HasForeignKey(d => d.AppointemtId)
-                    .HasConstraintName("patient_appintment");
 
                 entity.HasOne(d => d.Bill)
                     .WithMany(p => p.Patients)

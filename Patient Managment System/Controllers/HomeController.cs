@@ -25,17 +25,21 @@ namespace Patient_Managment_System.Controllers
         {
             var email = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Email).FirstOrDefault();
             var pass = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Password).FirstOrDefault();
-            var role = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Role).FirstOrDefault();
+            var urole = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Role).FirstOrDefault();
             var uId = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Id).FirstOrDefault();
+            LoginModel loginModel = new LoginModel();
+            loginModel.Id = uId;
+            loginModel.role = urole;
             if (username.Equals(email))
             {
                 if (password.Equals(pass))
                 {
                     return RedirectToRoute(new
                     {
-                        controller = role,
+                        controller = loginModel.role,
                         action = "Index",
-                        Id = uId
+                        Id = uId,
+                        role = urole
                     }); ;
                 }
             }
@@ -47,19 +51,6 @@ namespace Patient_Managment_System.Controllers
                     action = "Error"
                 });
             }
-            return View();
-        }
-
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult ForgotPassword(string username,string RememberPhrase,string password)
-        {
-            var email = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Email).FirstOrDefault();
-            var id = _context.Users.Where(temp => temp.Email.Contains(username)).Select(p => p.Id).FirstOrDefault();
             return View();
         }
 

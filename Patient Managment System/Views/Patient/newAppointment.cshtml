@@ -5,23 +5,26 @@
 }
 
 <div class="text-center">
-    <h2 class="brand-text d-none d-lg-inline-block">Shop</h2>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Medicine Order" disabled></textarea>
-    </div>
-    <form class="login-form py-5 w-100" method="get" action="index.html">
+    <form class="login-form py-5 w-100" method="post" action="/Patient/newAppointment">
         <div class="input-material-group mb-3">
-            <input class="input-material" id="login-username" type="text" name="PatientId" autocomplete="on" required data-validate-field="loginUsername">
-            <label class="label-material" for="PatientId">Patient ID</label>
+            <input class="input-material" id="login-username" type="text" name="Id" autocomplete="on" required data-validate-field="loginUsername">
+            <label class="label-material" for="Id">Patient ID</label>
         </div>
         <div class="input-material-group mb-4">
-            <input class="input-material" id="login-password" type="date" name="date" required data-validate-field="Date">
-            <label class="label-material" for="date">Set a Date </label>
+            <input class="input-material" id="login-password" type="text" name="PatientName" required data-validate-field="PhysicianName">
+            <label class="label-material" for="PatientName">Patient Name</label>
         </div>
         <div class="input-material-group mb-4">
-            <input class="input-material" id="login-password" type="text" name="PhysicianName" required data-validate-field="PhysicianName">
-            <label class="label-material" for="PhysicianName">Physician Name </label>
+            <input class="input-material" id="login-password" type="text" name="PhoneNumber" required data-validate-field="PhysicianName">
+            <label class="label-material" for="PhoneNumber">Patient's Phone Number</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="date" name="NextAppointment" required data-validate-field="Date">
+            <label class="label-material" for="NextAppointment">Set a Date </label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="DoctorName" required data-validate-field="PhysicianName">
+            <label class="label-material" for="DoctorName">Physician Name</label>
         </div>
         <button class="btn btn-primary mb-3" id="login" type="submit">Confirm</button>
     </form>

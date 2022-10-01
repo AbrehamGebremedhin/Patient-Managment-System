@@ -12,8 +12,10 @@ namespace Patient_Managment_System.Controllers
             _userService = userService;
         }
 
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(LoginModel loginModel)
         {
+            ViewBag.Id = loginModel.Id;
+            ViewBag.role = loginModel.role;
             var data = await _userService.GetAllAsync();
             return View(data);
         }

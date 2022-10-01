@@ -22,7 +22,6 @@ namespace Patient_Managment_System.Models
         public int? OrderId { get; set; }
         public int? DiagnosisId { get; set; }
 
-        public virtual Appointment? Appointemt { get; set; }
         public virtual Bill? Bill { get; set; }
         public virtual PatientDiag? Diagnosis { get; set; }
         public virtual OrderHistory? Order { get; set; }

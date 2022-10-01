@@ -5,7 +5,30 @@
 }
 
 <div class="text-center">
-    <h1>Welcome to Settings Dashboard </h1> 
+    <h2 class="brand-text d-none d-lg-inline-block">Update User Information</h2>
+    <form class="login-form py-5 w-100" method="post" action="/Settings/Index/@ViewBag.uId">
+        <div class="input-material-group mb-3">
+            <input class="input-material" id="login-username" type="text" name="Name" autocomplete="on" required data-validate-field="Fullname">
+            <label class="label-material" for="Name">User's Full Name</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="email" name="Email" required data-validate-field="loginUsername" >
+            <label class="label-material" for="Email">Email</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="password" name="Password" required data-validate-field="loginPassword">
+            <label class="label-material" for="Password">Password</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input class="input-material" id="login-password" type="text" name="RememberPhrase" required data-validate-field="RememberToken">
+            <label class="label-material" for="RememberPhrase">Remeber Token</label>
+        </div>
+        <div class="input-material-group mb-4">
+            <input type="hidden" class="input-material" id="login-password" name="Role" required data-validate-field="Role" value="ViewBag.role">
+        </div>
+        <button class="btn btn-primary mb-3" id="login" type="submit">Save</button>
+    </form>
 </div>
+
 
 
